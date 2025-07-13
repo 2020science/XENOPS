@@ -74,4 +74,6 @@ Human-related fairness
 
 In addition, tabs allow the full responses in each JSON file to be explored.
 
+**Additional files
 
+Two example JSON files are included
