@@ -1,0 +1,104 @@
+<!-- 
+XENOPS Analyzer
+Version 3.0
+July 12, 2025
+
+Vibe coded by Andrew Maynard using ChatGPT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>XENOPS Analyzer – v1.1</title>
+
+  <!-- Prevent favicon 404 -->
+  <link rel="icon" href="data:," />
+
+  <!-- External lib: Chart.js 4.x  (SRI removed so the file always loads) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Local resources -->
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="fieldMap.js"></script>
+  <script type="module" src="main.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>XENOPS Analyzer</h1>
+    <h2>Version&nbsp;3.0</h2>
+  </header>
+
+  <!-- === File‑upload section ===================================== -->
+  <section id="uploader">
+    <div class="file-row">
+      <label>Upload&nbsp;XENOPS&nbsp;JSON&nbsp;1:</label>
+      <input type="file" id="file1" accept=".json" />
+      <span id="file1-name">(No file)</span>
+      <span id="file1-status" class="status"></span>
+    </div>
+    <div class="file-row">
+      <label>Upload&nbsp;XENOPS&nbsp;JSON&nbsp;2:</label>
+      <input type="file" id="file2" accept=".json" />
+      <span id="file2-name">(No file)</span>
+      <span id="file2-status" class="status"></span>
+    </div>
+    <div class="file-row">
+      <label>Upload&nbsp;XENOPS&nbsp;JSON&nbsp;3:</label>
+      <input type="file" id="file3" accept=".json" />
+      <span id="file3-name">(No file)</span>
+      <span id="file3-status" class="status"></span>
+    </div>
+    <p class="note">*Files&nbsp;2&nbsp;and&nbsp;3 are optional*</p>
+    <hr />
+  </section>
+
+  <!-- === Tab navigation ========================================== -->
+  <nav id="tabs">
+    <button class="tab-link active" data-tab="model-comp">Model&nbsp;Comp</button>
+    <button class="tab-link" data-tab="run-comp">Run&nbsp;Comp</button>
+    <button class="tab-link" data-tab="json1">JSON&nbsp;File&nbsp;1</button>
+    <button class="tab-link" data-tab="json2">JSON&nbsp;File&nbsp;2</button>
+    <button class="tab-link" data-tab="json3">JSON&nbsp;File&nbsp;3</button>
+    <button class="tab-link" data-tab="about">About</button>
+  </nav>
+
+  <!-- === Tab panes =============================================== -->
+  <main>
+    <!-- [1] Model comparison -->
+    <section id="model-comp" class="tab-content active">
+      <canvas id="model-run1-chart" width="800" height="600"></canvas>
+      <figcaption id="caption-model-run1"></figcaption>
+      <canvas id="model-run2-chart" width="800" height="600"></canvas>
+      <figcaption id="caption-model-run2"></figcaption>
+    </section>
+
+    <!-- [2] Run comparison -->
+    <section id="run-comp" class="tab-content">
+      <canvas id="run-file1-chart" width="800" height="600"></canvas>
+      <figcaption id="caption-run-file1"></figcaption>
+      <canvas id="run-file2-chart" width="800" height="600"></canvas>
+      <figcaption id="caption-run-file2"></figcaption>
+      <canvas id="run-file3-chart" width="800" height="600"></canvas>
+      <figcaption id="caption-run-file3"></figcaption>
+    </section>
+
+    <!-- [3–5] Raw JSON panes -->
+    <section id="json1" class="tab-content"><pre id="json1-pre"></pre></section>
+    <section id="json2" class="tab-content"><pre id="json2-pre"></pre></section>
+    <section id="json3" class="tab-content"><pre id="json3-pre"></pre></section>
+
+    <!-- [6] About -->
+    <section id="about" class="tab-content">
+      <h3>About this tool</h3>
+      <p><!-- add narrative here --></p>
+    </section>
+  </main>
+  
+  <footer id="site-footer">
+  Vibe coded using ChatGPT. © Andrew Maynard 2025
+  </footer>
+  
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* ----------------------------------------------------------
+ *  Global type & layout
+ * -------------------------------------------------------- */
+:root {
+  font-family: system-ui, sans-serif;
+  --accent: #1769ff;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 1.5rem;
+  line-height: 1.55;
+}
+
+header { text-align: center; }
+h1 { margin: 0; font-size: 2.2rem; }
+h2 { margin: .25rem 0 1.5rem; font-weight: 400; }
+
+.file-row { display: flex; gap: .5rem; align-items: center; margin-bottom: .5rem; }
+.file-row label { min-width: 14rem; }
+
+.status { font-weight: 600; }
+.status.ok    { color: green; }
+.status.error { color: red; }
+
+.note   { font-style: italic; margin:.5rem 0 1rem; }
+
+/* ----------------------------------------------------------
+ *  Tab navigation strip
+ * -------------------------------------------------------- */
+#tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+.tab-link {
+  padding: .5rem .75rem;
+  border: 1px solid var(--accent);
+  background: white;
+  cursor: pointer;
+  user-select: none;
+}
+.tab-link.active, .tab-link:hover { background: var(--accent); color: #fff; }
+
+/* ----------------------------------------------------------
+ *  Tab panes
+ * -------------------------------------------------------- */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+canvas {
+  display: block;
+  width: 80%;
+  margin: 1.25rem auto;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: -1rem;
+  font-style: italic;
+  color: #444;
+}
+
+/* ----------------------------------------------------------
+ *  JSON pretty‑print panes
+ * -------------------------------------------------------- */
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #f7f8fa;
+  border: 1px solid #e1e4e8;
+  padding: 1rem;
+  border-radius: 4px;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+/* Simple centred footer */
+footer#site-footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: .85rem;
+  color: #666;
+}
+
+pre strong { font-weight: 700; }
